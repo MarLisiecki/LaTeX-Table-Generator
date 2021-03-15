@@ -23,7 +23,7 @@ This software can help you transform table from CSV files (e.g. Excel) to LaTeX'
 Dillinger uses a number of open source projects to work properly:
 
 - [Python 3.7] - just Python
-- [CSV Python library] - awesome web-based text editor
+- [CSV Python library] - Python's library which allows you to work with CSV files
 
 ## Requirements
 
@@ -49,6 +49,8 @@ Path to CSV:
 ```
 
 In LaTeX it looks like this:
+
+
 [![N|Solid](https://i.imgur.com/vMgR5dE.png)](https://nodesource.com/products/nsolid)
 
 
