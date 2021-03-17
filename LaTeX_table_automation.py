@@ -8,11 +8,11 @@ __status__ = "production"
 import csv
 
 # Function for getting information and data from CSV
-def get_table_info():
+def get_table_info(datafilename):
 
     data_list = []
     dlm = "\t"
-    datafilename = input("Path to CSV: \n")
+    # datafilename = input("Path to CSV: \n")
 
     # Open file
     file = open(datafilename, "r")
@@ -39,7 +39,11 @@ def generate_table(number_of_columns, data_list, heading):
     columns_string = columns_string + "}\n"
 
     begin_string = (
-        "\\begin{center}\n\t\\begin{tabular}" + columns_string + "\t\t" + hline_string
+        "\\begin{center}\n\t\\begin{tabular}"
+        + columns_string
+        + "\t\t"
+        + hline_string
+        + "\n"
     )
 
     # Add heading on the top
@@ -64,6 +68,7 @@ def print_syntax(final_table):
 
 
 # Call functions
-number_of_columns, data_list, heading = get_table_info()
-final_table = generate_table(number_of_columns, data_list, heading)
-print_syntax(final_table)
+def combine_functions(datafilename):
+    number_of_columns, data_list, heading = get_table_info(datafilename)
+    final_table = generate_table(number_of_columns, data_list, heading)
+    return final_table
